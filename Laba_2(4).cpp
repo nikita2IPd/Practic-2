@@ -1,33 +1,28 @@
-﻿#include <iostream>
-
 int main() {
-    setlocale(LC_ALL, "Russian");
-    const int n = 10;
-    int X[n];
+    const int maxSize = 100;
+    int staticArray[maxSize] = {12, 7, 25, 16, 3, 8, 19, 14, 30, 5}; 
 
-    for (int i = 0; i < n; i++) {
-        std::cout << "Введите элемент X[" << i << "]: ";
-        std::cin >> X[i];
-    }
+    int n = sizeof(staticArray) / sizeof(staticArray[0]);
 
-    int maxElement = X[0];
-    int minElement = X[0];
+    int maxElement = staticArray[0];
+    int minElement = staticArray[0];
     int maxIndex = 0;
     int minIndex = 0;
 
     for (int i = 1; i < n; i++) {
-        if (X[i] > maxElement) {
-            maxElement = X[i];
+        if (staticArray[i] > maxElement) {
+            maxElement = staticArray[i];
             maxIndex = i;
         }
-        if (X[i] < minElement) {
-            minElement = X[i];
+        if (staticArray[i] < minElement) {
+            minElement = staticArray[i];
             minIndex = i;
         }
     }
 
-    std::cout << "Максимальный элемент: " << maxElement << ", Максимальный индекс: " << maxIndex << std::endl;
-    std::cout << "Минимальный элемент: " << minElement << ", Минимальный индекс: " << minIndex << std::endl;
+    std::cout << "Максимальный элемент: " << maxElement << ", Индекс: " << maxIndex << std::endl;
+
+    std::cout << "Минимальный элемент: " << minElement << ", Индекс: " << minIndex << std::endl;
 
     return 0;
 }
