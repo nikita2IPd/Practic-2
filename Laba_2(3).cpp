@@ -1,26 +1,26 @@
-﻿#include <iostream>
+#include <iostream>
+
+const int ARRAY_SIZE = 5;
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-    int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    int size = sizeof(array) / sizeof(array[0]);
+    int array[ARRAY_SIZE] = { 2, 5, 9, 12, 15 };
 
-    std::cout << "Количество чисел в массиве: " << size << std::endl;
-
-    std::cout << "Содержимое массива: ";
-    for (int i = 0; i < size; i++) {
-        std::cout << array[i] << " ";
-    }
-    std::cout << std::endl;
-
+    int count = 0;
     int sum = 0;
-    for (int i = 0; i < size; i++) {
+
+    std::cout << "Number of elements in the array: " << ARRAY_SIZE << std::endl;
+
+    std::cout << "Array elements: ";
+    for (int i = 0; i < ARRAY_SIZE; i++) {
+        std::cout << array[i] << " ";
+
         if (array[i] % 3 == 0) {
             sum += array[i];
         }
     }
+    std::cout << std::endl;
 
-    std::cout << "Сумма элементов массива, кратных 3: " << sum << std::endl;
+    std::cout << "Sum of elements divisible by 3: " << sum << std::endl;
 
     return 0;
 }
